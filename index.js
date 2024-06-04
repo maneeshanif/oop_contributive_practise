@@ -55,6 +55,7 @@ class salam {
 }
 let a = new salam();
 let b = new salam();
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* 2) prototype or instance method 
      its a oposite of constructor method you must define the name of method . and also called this method with 
@@ -62,6 +63,10 @@ let b = new salam();
      For simple example check the first program of this page
      
      Here is a real word example of instance/prototype method with the combination of constructor method.
+     syntax 
+        methodname(){
+          // something
+          }
 */
 class Animal {
     constructor(name, type) {
@@ -76,4 +81,49 @@ class Animal {
   
   const animal = new Animal('Leo', 'Lion');
   animal.describe();
+
+  // ------------------------------------------------------------------------------------------------------------------------------------------------------------
+  // 3) Static Method
+  /*
+  Static methods are methods that are called on the class itself, rather than on instances of the class
+  They are often used to create utility functions that can be used without creating an instance of the class
+
+  Syntax 
+  static methodname(){
+    // something
+    }
+
+  */
+ class MathHelper {
+  static add(a, b) {
+    return a + b;
+    }
+    }
+    console.log(MathHelper.add(2, 3)); // here you see we don't need for making any object/instance to run the funtion.we called static method 
+                                      //  direcly after instilizing of class
+  //   here is the another example of static method with combination of instance method
+  class Calculator {
+    // Static method
+    static add(a, b) {
+      return a + b;
+    }
+  
+    // Instance method
+    multiply(a, b) {
+      return a * b;
+    }
+  }
+  
+  // Calling the static method on the class
+  console.log(Calculator.add(5, 3)); 
+  
+  // Creating an instance of the class
+  const calc = new Calculator();
+  
+  // Calling the instance method on the instance
+  console.log(calc.multiply(5, 3)); 
+  // -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
   
